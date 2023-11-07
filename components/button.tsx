@@ -28,6 +28,7 @@ export default function Button({
         size === 'large' && 'px-10 py-3',
         size === 'normal' && 'px-6 py-2',
       )}
+      {...props}
     >
       {children}
     </button>

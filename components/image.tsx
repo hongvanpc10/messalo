@@ -11,6 +11,7 @@ export default function Image({ className, ...props }: NextImageProps) {
         'object-cover',
         !className?.includes('w-') && 'w-full',
         !className?.includes('h-') && 'h-auto',
+        className,
       )}
       width={100}
       height={100}
