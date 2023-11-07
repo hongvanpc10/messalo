@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="vi">
       <body className={cn(fonts.sans.className)}>
         <ThemeProvider attribute="class">{children}</ThemeProvider>
       </body>

@@ -18,9 +18,10 @@ export default function Input({ icon, className, ...props }: InputProps) {
         className?.container,
       )}
     >
-      <i className={cn(icon, 'mr-3 text-gray-700', className?.icon)}></i>
+      <i className={cn(icon, 'mr-3 text-gray-500', className?.icon)}></i>
       <input
         className={cn('outline-none flex-1 text-sm py-2', className?.input)}
+        spellCheck="false"
         {...props}
       />
     </div>

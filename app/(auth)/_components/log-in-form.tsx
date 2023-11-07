@@ -4,6 +4,10 @@ import { Tab } from '@headlessui/react';
 import Link from 'next/link';
 import Button from '~/components/button';
 import Input from '~/components/input';
+import LogInWithGoogle from './log-in-with-google';
+import LogInWithFacebook from './log-in-with-facebook';
+import LogInWithApple from './login-with-apple';
+import routes from '~/configs/routes';
 
 export default function LogInForm() {
   return (
@@ -31,13 +35,21 @@ export default function LogInForm() {
                 />
               </div>
 
-              <Button width="full" className="mt-10">
+              <Button width="full" size="large" className="mt-10">
                 Đăng nhập với mật khẩu
               </Button>
 
-              <Button width="full" variant="secondary" className="mt-3">
-                Đăng kí tài khoản mới
-              </Button>
+              <Link href={routes.register}>
+                <Button
+                  width="full"
+                  size="large"
+                  variant="secondary"
+                  className="mt-3"
+                  type="button"
+                >
+                  Đăng kí tài khoản mới
+                </Button>
+              </Link>
 
               <div className="flex justify-center mt-4">
                 <Link
@@ -49,7 +61,22 @@ export default function LogInForm() {
               </div>
             </form>
           </Tab.Panel>
-          <Tab.Panel>123</Tab.Panel>
+          <Tab.Panel className="space-y-4">
+            <LogInWithGoogle />
+            <LogInWithFacebook />
+            <LogInWithApple />
+            <Link href={routes.register}>
+              <Button
+                width="full"
+                size="large"
+                variant="secondary"
+                className="!mt-6"
+                type="button"
+              >
+                Đăng kí tài khoản mới
+              </Button>
+            </Link>
+          </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
     </div>
